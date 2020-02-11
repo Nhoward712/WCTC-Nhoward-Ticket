@@ -1,0 +1,5 @@
+/Users/nealhoward/Projects/lesson2/lesson2/bin/Debug/lesson2.exe
+/Users/nealhoward/Projects/lesson2/lesson2/bin/Debug/lesson2.pdb
+/Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.exe
+/Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.pdb
+/Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.csprojAssemblyReference.cache
