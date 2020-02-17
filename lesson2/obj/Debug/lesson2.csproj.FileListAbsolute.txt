@@ -3,3 +3,18 @@
 /Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.exe
 /Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.pdb
 /Users/nealhoward/Projects/lesson2/lesson2/obj/Debug/lesson2.csprojAssemblyReference.cache
+/Users/nealhoward/Projects/WCTC-Howard-NetDB/lesson2/bin/Debug/lesson2.exe
+/Users/nealhoward/Projects/WCTC-Howard-NetDB/lesson2/bin/Debug/lesson2.pdb
+/Users/nealhoward/Projects/WCTC-Howard-NetDB/lesson2/obj/Debug/lesson2.csprojAssemblyReference.cache
+/Users/nealhoward/Projects/WCTC-Howard-NetDB/lesson2/obj/Debug/lesson2.exe
+/Users/nealhoward/Projects/WCTC-Howard-NetDB/lesson2/obj/Debug/lesson2.pdb
+/Volumes/NO NAME/TicketSystem/lesson2/bin/Debug/lesson2.exe
+/Volumes/NO NAME/TicketSystem/lesson2/bin/Debug/lesson2.pdb
+/Volumes/NO NAME/TicketSystem/lesson2/obj/Debug/lesson2.csprojAssemblyReference.cache
+/Volumes/NO NAME/TicketSystem/lesson2/obj/Debug/lesson2.exe
+/Volumes/NO NAME/TicketSystem/lesson2/obj/Debug/lesson2.pdb
+D:\TicketSystem\lesson2\obj\Debug\lesson2.csprojAssemblyReference.cache
+D:\TicketSystem\lesson2\obj\Debug\lesson2.exe
+D:\TicketSystem\lesson2\obj\Debug\lesson2.pdb
+D:\TicketSystem\lesson2\bin\Debug\lesson2.exe
+D:\TicketSystem\lesson2\bin\Debug\lesson2.pdb

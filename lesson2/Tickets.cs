@@ -3,14 +3,25 @@ namespace lesson2
 {
     public class Tickets
     {
-               
-        public int Id { get; set; }
-        public string Summary { get; set; }
-        public string Status { get; set; }
-        public string Priority { get; set; }
-        public string Submitter { get; set; }
-        public string AssignedTo { get; set; }
-        public string Watching { get; set; }
+        public Tickets(int ticketNumber, string summary, string status, string priority,
+            string submittedBy, string assingedTo, string watching)
+    {
+            this.ticketNumber=ticketNumber;
+            this.summary = summary;
+            this.status = status;
+            this.priority = priority;
+            this.submittedBy = submittedBy;
+            this.assignedTo = assignedTo;
+            this.watching = watching;
+    }
+        
+        public int ticketNumber { get; set; }
+        public string summary { get; set; }
+        public string status { get; set; }
+        public string priority { get; set; }
+        public string submittedBy { get; set; }
+        public string assignedTo { get; set; }
+        public string watching { get; set; }
 
     }
        
