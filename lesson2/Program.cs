@@ -13,6 +13,8 @@ namespace lesson2
             //create array for ticket objects
             //ticket
             
+
+            // Tickets ThisONE = new Bugs
             string file = "tickets.csv";
             StreamReader ticketFile = new StreamReader(file);
             int ticketNumber = 0;
@@ -117,6 +119,14 @@ namespace lesson2
         
             for (int i = 0; i < Ticket.Count;i++){
                 Console.WriteLine(Ticket[i].ticketNumber);
+                Console.WriteLine(Ticket[i].summary);  
+                Console.WriteLine(Ticket[i].status);
+                Console.WriteLine(Ticket[i].priority);
+                Console.WriteLine(Ticket[i].submittedBy);
+                Console.WriteLine(Ticket[i].assignedTo);
+                Console.WriteLine(Ticket[i].watching);
+
+
             }
         MenuOptions(ticketNumber, Ticket);
         }
@@ -130,11 +140,11 @@ namespace lesson2
                 {
                     for (int i = 0; i < Ticket.Count; i++)
                     {
-                        ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket.ticketNumber, Ticket.summary,
-                                Ticket.status, Ticket.priority, Ticket.submittedBy, Ticket.assignedTo, Ticket.watching);
+                        ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket[i].ticketNumber, Ticket[i].summary,
+                                Ticket[i].status, Ticket[i].priority, Ticket[i].submittedBy, Ticket[i].assignedTo, Ticket[i].watching);
                         Console.WriteLine("A Ticket has been created for you.");
-                        ticketFile.Close();
                     }
+                ticketFile.Close();
                 }
             }
             else
@@ -144,11 +154,11 @@ namespace lesson2
                 {
                     for (int i = 0; i < Ticket.Count; i++)
                     {
-                        ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket.ticketNumber, Ticket.summary,
-                                Ticket.status, Ticket.priority, Ticket.submittedBy, Ticket.assignedTo, Ticket.watching);
+                        ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket[i].ticketNumber, Ticket[i].summary,
+                                Ticket[i].status, Ticket[i].priority, Ticket[i].submittedBy, Ticket[i].assignedTo, Ticket[i].watching);
                         Console.WriteLine("A Ticket has been created for you.");
-                        ticketFile.Close();
                     }
+                       ticketFile.Close();
                 }
             }
         }

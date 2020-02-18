@@ -1,7 +1,7 @@
 ﻿using System;
 namespace lesson2
 {
-    public class Tickets
+    public abstract class Tickets
     {
         public Tickets(int ticketNumber, string summary, string status, string priority,
             string submittedBy, string assingedTo, string watching)
