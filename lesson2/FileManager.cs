@@ -21,9 +21,10 @@ namespace lesson2
                     {
                         ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket.ticketNumber, Ticket.summary,
                                Ticket.status, Ticket.priority, Ticket.submittedBy, Ticket.assignedTo, Ticket.watching);
-                        Console.WriteLine("A Ticket has been created for you.");
                         ticketFile.Close();
                     }
+                    Console.WriteLine("A Ticket has been created for you.");
+
                 }
             }
             else

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-
+using System.Data;
+using System.Collections.Generic.List;
 namespace lesson2
 {
     class MainClass
@@ -10,28 +11,33 @@ namespace lesson2
         {
             //read csv file
             //user picks option to either create new or list current
-            //create array for ticket objects
-            //ticket
-            
+            //
+            //modify input for defining what type of ticket it is. - done
+            //fix output so it looks formatted
+            //get rid of testing statements - done
+            //create classes for each ticket type
+            //different arrays for each class?
 
             // Tickets ThisONE = new Bugs
             string file = "tickets.csv";
             StreamReader ticketFile = new StreamReader(file);
             int ticketNumber = 0;
-            List<Tickets> Ticket = new List<Tickets>();
+            //List<Bugs> BugTicket = new List<Bugs>();
+            Bugs bug = new Bugs();
+            
+            //create three list arrays
+            //need type of ticket field
+            //read type of ticket field then switch to appropriate array
+
             while (!ticketFile.EndOfStream)
             {
                 string line = ticketFile.ReadLine();
                 string[] arg = line.Split('|');
                 ticketNumber = Int32.Parse(arg[0]);
-                Ticket.Add(new Tickets(Int32.Parse(arg[0]),arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]));
-
+                //Ticket.Add(new Tickets(Int32.Parse(arg[0]),arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]));
             }
-          
             ticketFile.Close();
-
             Console.WriteLine("Welcome to our Ticket system");
-            
             MenuOptions(ticketNumber, Ticket);
         }
         public static void MenuOptions(int ticketNumber, List<Tickets> Ticket)
@@ -47,8 +53,12 @@ namespace lesson2
 
             if (choice == "1")
             {
+                Console.WriteLine("What type of ticket is it");
+                Console.WriteLine("(b)ug, (e)nhancment, or (t)ask");
+                choice =Console.ReadLine();
+
                 ticketNumber++;
-                CreateTicket(ticketNumber, Ticket);
+                CreateTicket(ticketNumber, Ticket, choice);
                 
                //
             }
@@ -67,7 +77,7 @@ namespace lesson2
             
         }
 
-        public static void CreateTicket(int ticketNumber, List<Tickets> Ticket)
+        public static void CreateTicket(int ticketNumber, List<Tickets> Ticket, string choice)
         {
             //List<Tickets> thisMethodTickets = Ticket;
             
@@ -82,13 +92,38 @@ namespace lesson2
             submitter = Console.ReadLine();
             Console.WriteLine("Who should this ticket be assigned to?");
             assignedTo = Console.ReadLine();
-            Console.WriteLine("this code should write");
             Console.WriteLine("Who will be watching this ticket?(type 'none' when done)");
-            Console.WriteLine("so should this");
             while(watching != "none"){
             watching = Console.ReadLine();
             }
-            Ticket.Add(new Tickets(ticketNumber,summary, status, priority, submitter, assignedTo, watching));
+            switch(choice){
+                case "b":
+                    Console.WriteLine("what is the severity of this issue?");
+                    string severity = Console.ReadLine();
+                    break;
+                case "e":
+                    //software, cost, reason, estimate
+                    Console.WriteLine("What software is needed?");
+                    string software = Console.ReadLine();
+                    Console.WriteLine("What is the cost?");
+                    string cost = Console.ReadLine();
+                    Console.WriteLine("What is the reason for the enhancement?");
+                    string reason = Console.ReadLine();
+                    Console.WriteLine("What software is needed?");
+                    string estimate = Console.ReadLine();
+                    
+                    break;
+                case "t":
+                    //project name, due date
+                    Console.WriteLine("What should the project be named?");
+                    string projectName = Console.ReadLine();
+                    Console.WriteLine("When is it due?");
+                    string dueDate = Console.ReadLine();
+                    
+                break;
+
+            }
+            //Ticket.Add(new Tickets(ticketNumber,summary, status, priority, submitter, assignedTo, watching));
             
 
             saveFile(Ticket);
