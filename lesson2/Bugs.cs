@@ -1,11 +1,10 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
+using lesson2;
 namespace lesson2
 {
-	public class Bugs : Tickets
-	{
-		public string Severity { get; set; }
-	}
+    public class Bugs: Tickets
+    {
+        public int severity { get; set; }
+    }
+
 }

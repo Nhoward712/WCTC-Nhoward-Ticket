@@ -11,6 +11,7 @@ namespace lesson2
             this.Ticket = Ticket;
 
         }
+
         public Save(List<Tickets> Ticket)
         {
             if (!File.Exists(file))
@@ -20,7 +21,8 @@ namespace lesson2
                     for (int i = 0; i < Ticket.Count; i++)
                     {
                         ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket.ticketNumber, Ticket.summary,
-                               Ticket.status, Ticket.priority, Ticket.submittedBy, Ticket.assignedTo, Ticket.watching);
+                               Ticket.status, Ticket.priority, Ticket.submittedBy, Ticket.assignedTo, 
+                               Ticket.watching);
                         ticketFile.Close();
                     }
                     Console.WriteLine("A Ticket has been created for you.");
@@ -41,6 +43,8 @@ namespace lesson2
                     }
                 }
             }
+        }
+        public readFile(){
         }
     }
 }

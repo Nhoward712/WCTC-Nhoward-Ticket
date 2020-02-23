@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Bugs",
+      "appliesTo": "lesson2/Bugs.cs",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-Bugs",
+      "appliesTo": "lesson2/Bugs.cs",
+      "type": "launch"
+    }
+  ]
+}

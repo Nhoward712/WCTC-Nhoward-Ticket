@@ -2,7 +2,7 @@
 
 namespace lesson2
 {
-    public class Tickets
+    public abstract class Tickets
     {
         public int ticketNumber { get; set; }
         public string summary { get; set; }
@@ -11,7 +11,7 @@ namespace lesson2
         public string submittedBy { get; set; }
         public string assignedTo { get; set; }
         public string watching { get; set; }
-
+        
         public Tickets()
         {
         

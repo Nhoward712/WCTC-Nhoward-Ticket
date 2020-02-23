@@ -8,26 +8,24 @@ namespace lesson2
     {
         public static void Main(string[] args)
         {
-            //read csv file
-            //user picks option to either create new or list current
+            
             //
-            //modify input for defining what type of ticket it is. - done
+            lesson2.
             //fix output so it looks formatted
             //get rid of testing statements - done
-            //create classes for each ticket type
+            //create classes for each ticket type - broken
             //different arrays for each class?
-
-            // Tickets ThisONE = new Bugs
-            string file = "tickets.csv";
-            StreamReader ticketFile = new StreamReader(file);
-            int ticketNumber = 0;
-            //List<Bugs> BugTicket = new List<Bugs>();
-            Bugs bug = new Bugs();
-            
             //create three list arrays
             //need type of ticket field
             //read type of ticket field then switch to appropriate array
+            Tickets bug = new Bugs();
+            Tickets enhance = new Enhancement();
+            Tickets task = new Task();
 
+            //read csv file
+            string file = "tickets.csv";
+            StreamReader ticketFile = new StreamReader(file);
+            int ticketNumber = 0;
             while (!ticketFile.EndOfStream)
             {
                 string line = ticketFile.ReadLine();
@@ -41,6 +39,7 @@ namespace lesson2
         }
         public static void MenuOptions(int ticketNumber, List<Tickets> Ticket)
         {
+            //user picks option to either create new or list current
             string choice;
             do
             {
@@ -49,15 +48,14 @@ namespace lesson2
                 Console.WriteLine("(2) List Current Tickets");
                 choice = Console.ReadLine();
             } while (choice != "1" && choice != "2" && choice !="3");
-
+            //modify input for defining what type of ticket it is. - done
             if (choice == "1")
             {
                 Console.WriteLine("What type of ticket is it");
                 Console.WriteLine("(b)ug, (e)nhancment, or (t)ask");
                 choice =Console.ReadLine();
-
                 ticketNumber++;
-                CreateTicket(ticketNumber, Ticket, choice);
+                CreateTicket(ticketNumber, bug, Enhancement, task, choice);
                 
                //
             }
@@ -99,6 +97,7 @@ namespace lesson2
                 case "b":
                     Console.WriteLine("what is the severity of this issue?");
                     string severity = Console.ReadLine();
+                    Bug.add(ticketNumber,summary, status, priority, submitter, assignedTo, watching, severity);
                     break;
                 case "e":
                     //software, cost, reason, estimate

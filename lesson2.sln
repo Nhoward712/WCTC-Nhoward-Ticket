@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson2", "lesson2\lesson2.csproj", "{B676D251-A609-4E8B-BC3C-7C96543F3ACB}"
 EndProject
 Global
@@ -9,9 +10,15 @@ Global
 		Release|anycpu = Release|anycpu
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Debug|anycpu.Build.0 = Debug|anycpu
-		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Release|anycpu.ActiveCfg = Release|anycpu
-		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Release|anycpu.Build.0 = Release|anycpu
+		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{B676D251-A609-4E8B-BC3C-7C96543F3ACB}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92AA5FAE-27FF-438E-AA40-4948BB057A95}
 	EndGlobalSection
 EndGlobal
