@@ -9,7 +9,6 @@ namespace lesson2
         public static void Main(string[] args)
         {
             
-            //
             //fix output so it looks formatted
             //get rid of testing statements - done
             //create classes for each ticket type - broken
@@ -32,8 +31,11 @@ namespace lesson2
             {
                 string line = ticketFile.ReadLine();
                 string[] arg = line.Split('|');
+                int type = arg.Length;
                 ticketNumber = Int32.Parse(arg[0]);
-                Ticket.Add(new Tickets(Int32.Parse(arg[0]), arg[1], arg[2], arg[3], arg[4], arg[5], arg[6]));
+                Ticket.Add(new Tickets(Int32.Parse(arg[0]),
+                    arg[1], arg[2], arg[3], arg[4],
+                    arg[5], arg[6]));
             }
             ticketFile.Close();
             Console.WriteLine("Welcome to our Ticket system");
@@ -163,12 +165,13 @@ namespace lesson2
                 Console.WriteLine("Priority: " + Ticket[i].priority);
                 Console.WriteLine("Submitted By: " + Ticket[i].submittedBy);
                 Console.WriteLine("Ticket is assigned to: " + Ticket[i].assignedTo);
-                Console.WriteLine(" Who is wathcing the ticket? " + Ticket[i].watching);
+                Console.WriteLine(" Who is watching the ticket? " + Ticket[i].watching);
                 Console.WriteLine("");
-
-
             }
-        MenuOptions(ticketNumber, Ticket);
+
+
+            MenuOptions(ticketNumber, Ticket);
+
         }
 
         public static void saveFile(List<Tickets> Ticket)

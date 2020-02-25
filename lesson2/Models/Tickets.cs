@@ -5,7 +5,7 @@ namespace lesson2
     public class Tickets
     {
         //private int ticketNumber;
-        //private string summary, status, priority, submittedBy, assignedTo, watching;
+       //protected string summary, status, priority, submittedBy, assignedTo, watching;
         public Tickets(int ticketNumber, string summary, string status, string priority, string submittedBy,
             string assignedTo, string watching)
         {
