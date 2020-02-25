@@ -10,7 +10,6 @@ namespace lesson2
         {
             
             //
-            lesson2.
             //fix output so it looks formatted
             //get rid of testing statements - done
             //create classes for each ticket type - broken
@@ -18,9 +17,12 @@ namespace lesson2
             //create three list arrays
             //need type of ticket field
             //read type of ticket field then switch to appropriate array
-            Tickets bug = new Bugs();
-            Tickets enhance = new Enhancement();
-            Tickets task = new Task();
+
+            //Tickets bug = new Bugs();
+            //Tickets enhance = new Enhancement();
+            //Tickets task = new Task();
+
+            List<Tickets> Ticket = new List<Tickets>();
 
             //read csv file
             string file = "tickets.csv";
@@ -31,7 +33,7 @@ namespace lesson2
                 string line = ticketFile.ReadLine();
                 string[] arg = line.Split('|');
                 ticketNumber = Int32.Parse(arg[0]);
-                //Ticket.Add(new Tickets(Int32.Parse(arg[0]),arg[1],arg[2],arg[3],arg[4],arg[5],arg[6]));
+                Ticket.Add(new Tickets(Int32.Parse(arg[0]), arg[1], arg[2], arg[3], arg[4], arg[5], arg[6]));
             }
             ticketFile.Close();
             Console.WriteLine("Welcome to our Ticket system");
@@ -55,7 +57,7 @@ namespace lesson2
                 Console.WriteLine("(b)ug, (e)nhancment, or (t)ask");
                 choice =Console.ReadLine();
                 ticketNumber++;
-                CreateTicket(ticketNumber, bug, Enhancement, task, choice);
+                CreateTicket(ticketNumber,Ticket, choice);
                 
                //
             }
@@ -89,7 +91,9 @@ namespace lesson2
             submitter = Console.ReadLine();
             Console.WriteLine("Who should this ticket be assigned to?");
             assignedTo = Console.ReadLine();
+
             Console.WriteLine("Who will be watching this ticket?(type 'none' when done)");
+
             while(watching != "none"){
             watching = Console.ReadLine();
             }
@@ -97,7 +101,9 @@ namespace lesson2
                 case "b":
                     Console.WriteLine("what is the severity of this issue?");
                     string severity = Console.ReadLine();
-                    Bug.add(ticketNumber,summary, status, priority, submitter, assignedTo, watching, severity);
+
+                    Ticket.Add(new Bugs (ticketNumber, summary, status, priority, submitter,
+                        assignedTo, watching, severity));
                     break;
                 case "e":
                     //software, cost, reason, estimate
@@ -121,7 +127,7 @@ namespace lesson2
                 break;
 
             }
-            //Ticket.Add(new Tickets(ticketNumber,summary, status, priority, submitter, assignedTo, watching));
+            Ticket.Add(new Tickets(ticketNumber,summary, status, priority, submitter, assignedTo, watching));
             
 
             saveFile(Ticket);
@@ -151,13 +157,14 @@ namespace lesson2
             }
         
             for (int i = 0; i < Ticket.Count;i++){
-                Console.WriteLine(Ticket[i].ticketNumber);
-                Console.WriteLine(Ticket[i].summary);  
-                Console.WriteLine(Ticket[i].status);
-                Console.WriteLine(Ticket[i].priority);
-                Console.WriteLine(Ticket[i].submittedBy);
-                Console.WriteLine(Ticket[i].assignedTo);
-                Console.WriteLine(Ticket[i].watching);
+                Console.WriteLine("Ticket Number: " + Ticket[i].ticketNumber);
+                Console.WriteLine("Summary of Issue: " + Ticket[i].summary);  
+                Console.WriteLine("Ticket Status: " + Ticket[i].status);
+                Console.WriteLine("Priority: " + Ticket[i].priority);
+                Console.WriteLine("Submitted By: " + Ticket[i].submittedBy);
+                Console.WriteLine("Ticket is assigned to: " + Ticket[i].assignedTo);
+                Console.WriteLine(" Who is wathcing the ticket? " + Ticket[i].watching);
+                Console.WriteLine("");
 
 
             }
@@ -175,9 +182,9 @@ namespace lesson2
                     {
                         ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket[i].ticketNumber, Ticket[i].summary,
                                 Ticket[i].status, Ticket[i].priority, Ticket[i].submittedBy, Ticket[i].assignedTo, Ticket[i].watching);
-                        Console.WriteLine("A Ticket has been created for you.");
                     }
-                ticketFile.Close();
+                    Console.WriteLine("A Ticket has been created for you.");
+                    ticketFile.Close();
                 }
             }
             else
@@ -189,9 +196,9 @@ namespace lesson2
                     {
                         ticketFile.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", Ticket[i].ticketNumber, Ticket[i].summary,
                                 Ticket[i].status, Ticket[i].priority, Ticket[i].submittedBy, Ticket[i].assignedTo, Ticket[i].watching);
-                        Console.WriteLine("A Ticket has been created for you.");
                     }
-                       ticketFile.Close();
+                    Console.WriteLine("A Ticket has been created for you.");
+                    ticketFile.Close();
                 }
             }
         }
